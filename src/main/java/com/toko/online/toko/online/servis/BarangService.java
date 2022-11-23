@@ -7,7 +7,7 @@ public interface BarangService {
     Barang addBarang(Barang barang);
 
     Object getBarang(Long No);
-    Barang editBarang(Long id, String name, Float price,Integer count, Integer reting, String deskripsi,Boolean publish);
+    Barang editBarang(Long No, String name, Float price,Integer count, Integer reting, String deskripsi,Boolean publish);
 
     void deleteBarangById(Long No);
 }

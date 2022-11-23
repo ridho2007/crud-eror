@@ -16,27 +16,20 @@ public class Auditable {
 
     @JsonFormat(pattern ="yyy-MM-dd")
     @CreationTimestamp
-    @Column(name ="created_at", updatable = false)
-private Date createdAt;
+    @Column(name ="dibuat", updatable = false)
+private Date dibuat;
 
-    @JsonFormat(pattern ="yyy-MM-dd")
-    @LastModifiedDate
-    @Column(name="updated_at")
-    private Date updatedAt;
+//    @JsonFormat(pattern ="yyy-MM-dd")
+//    @LastModifiedDate
+//    @Column(name="updated_at")
+//    private Date updatedAt;
 
-    public Date getCreatedAt() {
-        return createdAt;
+
+    public Date getDibuat() {
+        return dibuat;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setDibuat(Date dibuat) {
+        this.dibuat = dibuat;
     }
 }
