@@ -27,7 +27,7 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public Order addOrder(Order order) {
         if(orderRepository.findBypemilik(order.getPemilik()).isPresent()){
-            throw new InternalErrorException("Email sudah ada");
+            throw new InternalErrorException("pemilik sudah ada");
         }
         return orderRepository.save(order);
 
@@ -36,23 +36,24 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public Object  gerOrder(Long id) {
 
+        var order = orderRepository.findById(id).orElseThrow(() -> new NotFoundException("Id Tidak Ditemukan"));
         try {
-            var order = orderRepository.findById(id).orElseThrow(() -> new NotFoundException("id Tidak ditemukan"));
+            order.setHarga(order.getHarga()+ 0);
 
             return orderRepository.save(order);
-        } catch (Exception b) {
-            throw new InternalErrorException("ada yang terdapat null");
+        } catch (Exception e) {
+            throw  new InternalErrorException("Kesalahan Munculkan Data");
         }
     }
 
     @Override
-    public Order editOrder(Long id, String nameBarang, Integer harga, String pemilik) {
+    public Order editOrder(Long id, String nameBarang, String harga) {
         Order order = orderRepository.findById(id).get();
+
         order.setNameBarang(nameBarang);
         order.setHarga(harga);
-        order.setPemilik(pemilik);
+        return orderRepository.save(order);
 
-return  orderRepository.save(order);
     }
 
     @Override

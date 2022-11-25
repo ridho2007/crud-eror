@@ -10,7 +10,7 @@ public interface OrderService {
     Object gerOrder(Long id);
 
 
-    Order editOrder(Long id, String nameBarang, Integer harga, String pemilik );
+    Order editOrder(Long id, String nameBarang, String harga);
 
     void  deleteOrderById(Long id);
 }

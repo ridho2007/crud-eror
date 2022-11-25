@@ -18,6 +18,13 @@
 	</properties>
 
 	<dependencies>
+<!--		mapper-->
+		<dependency>
+		<groupId>org.modelmapper</groupId>
+		<artifactId>modelmapper</artifactId>
+		<version>3.0.0</version>
+		</dependency>
+<!--		end mapper-->
 <!--		new-->
 		<dependency>
 			<groupId>io.springfox</groupId>

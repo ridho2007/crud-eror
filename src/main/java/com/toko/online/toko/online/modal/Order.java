@@ -16,9 +16,9 @@ public class Order extends Auditable {
     private String nameBarang;
 
     @Column(name = "harga")
-    private Integer harga;
+    private String harga;
 
-    @Column(name = "pemilik")
+    @Column(name = "pemilik", nullable = false)
     private String pemilik;
 
     @Override
@@ -47,11 +47,11 @@ public class Order extends Auditable {
         this.nameBarang = nameBarang;
     }
 
-    public Integer getHarga() {
+    public String getHarga() {
         return harga;
     }
 
-    public void setHarga(Integer harga) {
+    public void setHarga(String harga) {
         this.harga = harga;
     }
 
